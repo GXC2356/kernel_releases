@@ -26,7 +26,8 @@ jobs:
         run: git clone https://github.com/SkylineUI-Devices/kernel_xiaomi_vayu.git -b fourteen --depth=1 .
 
       - name: Start Compilation
-        run: bash build.sh
+        run: bash envsetup.sh
+             build
 
       - name: Set-up files
         run: |
@@ -43,4 +44,4 @@ jobs:
           name: ${{ env.ZIP_NAME }}
           tag_name: ${{ github.run_id }}
           body: |
-            4.14.190 | Non KernelSU
+            Non KernelSU
